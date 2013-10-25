@@ -1,0 +1,21 @@
+services:
+  fm_cache.entity_cache:
+    class: FM\CacheBundle\ORM\EntityCache
+    arguments:
+      - @fm_cache.cache
+      - @doctrine.orm.default_result_cache
+      - @doctrine.orm.default_configuration
+
+  fm_cache.cached_entity_manager:
+    class: FM\CacheBundle\ORM\CachedEntityManager
+    arguments:
+      - @doctrine.orm.entity_manager
+      - @fm_cache.entity_cache
+
+  fm_cache.listener.cache_invalidation:
+    class: FM\CacheBundle\EventListener\CacheInvalidationListener
+    arguments: [@fm_cache.entity_cache]
+    tags:
+      - { name: doctrine.event_listener, event: postUpdate }
+      - { name: doctrine.event_listener, event: postPersist }
+      - { name: doctrine.event_listener, event: preRemove }
