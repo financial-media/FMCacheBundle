@@ -1,11 +1,17 @@
 {
     "name": "fm/cache-bundle",
+    "type": "symfony-bundle",
     "description": "Symfony2 bundle that provides a ORM caching layer for entities",
+    "keywords": ["cache"],
     "license": "MIT",
     "authors": [
         {
             "name": "Peter Kruithof",
             "email": "peter@financial-media.nl"
+        },
+        {
+            "name": "Jeroen Fiege",
+            "email": "jeroen@financial-media.nl"
         }
     ],
     "minimum-stability": "stable",
@@ -13,5 +19,8 @@
         "fm/cache": "~0.1",
         "doctrine/doctrine-bundle": "~1.2",
         "symfony/framework-bundle": "~2.2"
+    },
+    "autoload": {
+        "psr-0": { "FM": "src/" }
     }
 }
