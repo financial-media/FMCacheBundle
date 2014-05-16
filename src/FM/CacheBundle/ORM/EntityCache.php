@@ -10,6 +10,9 @@ use FM\Cache\CacheInterface;
  * Service that binds Doctrine's cache provider with our own meta class to
  * cache query results and helps with expiring entities. Used in conjunction
  * with the CachedEntityManager.
+ *
+ * @deprecated This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle
+ *
  */
 class EntityCache
 {
@@ -41,6 +44,8 @@ class EntityCache
      */
     public function __construct(CacheInterface $cache, CacheProvider $cacheProvider, Configuration $ormConfig)
     {
+        trigger_error('This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle', E_USER_DEPRECATED);
+        
         $this->metaCache = $cache;
         $this->entityCache = $cacheProvider;
         $this->ormConfig = $ormConfig;

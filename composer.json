@@ -1,7 +1,7 @@
 {
     "name": "fm/cache-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony2 bundle that provides a ORM caching layer for entities",
+    "description": "This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle",
     "keywords": ["cache"],
     "license": "MIT",
     "authors": [
@@ -19,6 +19,9 @@
         "fm/cache": "~0.1",
         "doctrine/doctrine-bundle": "~1.2",
         "symfony/framework-bundle": "~2.2"
+    },
+    "suggest": {
+        "treehouselabs/cache-bundle": "For the maintained counterpart of this bundle"
     },
     "autoload": {
         "psr-0": { "FM": "src/" }

@@ -24,6 +24,8 @@ use Doctrine\ORM\Query;
  * When a new instance of that entity is added to the database, all cached
  * queries (and their result) that reference that entity are purged, so the
  * query may contain the new entity when executed again.
+ *
+ * @deprecated This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle
  */
 class CachedEntityManager
 {
@@ -43,6 +45,8 @@ class CachedEntityManager
      */
     public function __construct(EntityManager $em, EntityCache $cache)
     {
+        trigger_error('This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle', E_USER_DEPRECATED);
+
         $this->em = $em;
         $this->cache = $cache;
     }

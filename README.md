@@ -1,4 +1,4 @@
-FMCacheBundle
-=============
+DEPRECATED
+==========
 
-Symfony2 bundle that provides a ORM caching layer for entities
+This bundle is superseded by https://packagist.org/packages/treehouselabs/cache-bundle
